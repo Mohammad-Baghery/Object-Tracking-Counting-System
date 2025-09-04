@@ -1,9 +1,24 @@
 
-# YOLOv8 Detection Settings
+# Device Settings
+DEVICE = "mps"  # Force MPS usage on M1, "auto", "cpu", "cuda", "mps"
 YOLO_MODEL = "yolov8n.pt"  # Model size: n(ano), s(mall), m(edium), l(arge), x(tra-large)
+
+
+# YOLOv8 Detection Settings
 CONFIDENCE_THRESHOLD = 0.5
 NMS_THRESHOLD = 0.4
-DEVICE = "auto"  # "auto", "cpu", "cuda", "mps"
+
+# Performance optimizations
+BATCH_SIZE = 1
+NUM_WORKERS = 0  # my MacBook M1 works better with 0 workers
+PREFETCH_FACTOR = 2
+
+# Memory optimizations
+MAX_MEMORY_CACHE = 1000  # MB
+ENABLE_MIXED_PRECISION = True
+
+# M1 specific settings
+MPS_FALLBACK = True  # Fallback to CPU if MPS fails
 
 # Object Classes to Track (COCO Dataset)
 # 0: person, 1: bicycle, 2: car, 3: motorcycle, 5: bus, 7: truck
