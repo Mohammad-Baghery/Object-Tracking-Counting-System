@@ -1,20 +1,5 @@
 import cv2
 
-# Device Settings
-DEVICE = "mps"  # Force MPS usage on M1, "auto", "cpu", "cuda", "mps"
-
-# YOLOv8 Detection Settings
-YOLO_MODEL = "yolov8n.pt"  # Model size: n(ano), s(mall), m(edium), l(arge), x(tra-large)
-MODEL_CONFIDENCE = 0.5
-MODEL_IOU_THRESHOLD = 0.45
-MAX_DETECTIONS = 1000
-HALF_PRECISION = True  # Use FP16 for faster inference on compatible devices
-
-# Performance optimizations
-BATCH_SIZE = 1 # Keep at 1 for video processing, especially on MPS
-NUM_WORKERS = 0  # my MacBook M1 works better with 0 workers
-PREFETCH_FACTOR = 2 # For DataLoader optimization
-
 # === Detection Settings ===
 CONFIDENCE_THRESHOLD = 0.5
 IOU_THRESHOLD = 0.45
